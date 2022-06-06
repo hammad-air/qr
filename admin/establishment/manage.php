@@ -17,11 +17,11 @@ if(isset($_GET['id']) && !empty($_GET['id'])){
 		<input type="text" class="form-control form-control-sm" name="name" id="name" value="<?php echo isset($name) ? $name : '' ?>" required>
 	</div>
 	<div class="form-group">
-		<label for="address" class="control-label">Address</label>
+		<label for="address" class="control-label">Subject</label>
 		<textarea type="text" class="form-control form-control-sm" name="address" id="address" required ><?php echo isset($address) ? $address : '' ?></textarea>
 	</div>
 	<div class="form-group">
-		<label for="city_id" class="control-label">City/State</label>
+		 <label for="city_id" class="control-label">Department</label> <!-- state as a Department act kr rha hay -->
 		<select name="city_id" id="city_id" class="custom-select custom-select-sm select2" required>
 			<option value=""></option>
 			<?php 
@@ -33,7 +33,7 @@ if(isset($_GET['id']) && !empty($_GET['id'])){
 		</select>
 	</div>
 	<div class="form-group">
-		<label for="zone_id" class="control-label">Barangay/Zone</label>
+		<label for="zone_id" class="control-label">Room No.</label>
 		<select name="zone_id" id="zone_id" class="custom-select custom-select-sm" required>
 			<option value=""></option>
 			<?php 

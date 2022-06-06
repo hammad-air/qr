@@ -20,7 +20,7 @@
 				</div>
 				<div class="form-group">
 					<label for="short_name" class="control-label">System Short Name</label>
-					<input type="text" class="form-control form-control-sm" short_name="short_name" id="short_name" value="<?php echo  $_settings->info('short_name') ?>">
+					<input type="text" class="form-control form-control-sm" name="short_name" id="short_name" value="<?php echo  $_settings->info('short_name') ?>">
 				</div>
 			<div class="form-group">
 				<label for="" class="control-label">System Logo</label>

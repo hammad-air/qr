@@ -13,25 +13,25 @@ if(isset($_GET['id']) && !empty($_GET['id'])){
 	<div id="msg" class="form-group"></div>
 	<input type="hidden" name='id' value="<?php echo isset($_GET['id']) ? $_GET['id'] : '' ?>">
 	<div class="form-group">
-		<label for="code" class="control-label">Code</label>
+		<label for="code" class="control-label">Floor</label>
 		<input type="text" class="form-control form-control-sm" name="code" id="code" value="<?php echo isset($code) ? $code : '' ?>" required>
 	</div>
 	<div class="form-group">
-		<label for="name" class="control-label">Barangay/Zone</label>
+		<label for="name" class="control-label">Room Name</label>
 		<input type="text" class="form-control form-control-sm" name="name" id="name" value="<?php echo isset($name) ? $name : '' ?>" required>
 	</div>
 	<div class="form-group">
-		<label for="description" class="control-label">Description</label>
+		<label for="description" class="control-label">Class Timing</label>
 		<textarea type="text" class="form-control form-control-sm" name="description" id="description" required ><?php echo isset($description) ? $description : '' ?></textarea>
 	</div>
 	<div class="form-group">
-		<label for="description" class="control-label">City/State</label>
+		<label for="description" class="control-label">Details</label>
 		<select name="city_id" id="" class="custom-select custom-select-sm select2">
 			<?php 
 			$city = $conn->query("SELECT c.*,s.name as sname FROM city_list c inner join state_list s on c.state_id = s.id order by c.name asc");
 			while($row=$city->fetch_assoc()):
 			?>
-			<option value="<?php echo $row['id'] ?>" <?php echo isset($city_id) && $city_id == $row['id'] ? "selected" : '' ?>><?php echo ucwords($row['name'].' City, '.$row['sname']) ?></option>
+			<option value="<?php echo $row['id'] ?>" <?php echo isset($city_id) && $city_id == $row['id'] ? "selected" : '' ?>><?php echo ucwords($row['name'].' , '.$row['sname']) ?></option>
 			<?php endwhile; ?>
 		</select>
 	</div>

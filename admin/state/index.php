@@ -23,7 +23,7 @@
 					<tr>
 						<th class="text-center">#</th>
 						<th>Code</th>
-						<th>State</th>
+						<th>Department</th>
 						<th>Description</th>
 						<th>Action</th>
 					</tr>

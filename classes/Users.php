@@ -14,11 +14,17 @@ Class Users extends DBConnection {
 		extract($_POST);
 		$data = '';
 		foreach($_POST as $k => $v){
-			if($k != 'id'){
+			if(!in_array($k,array('id','password'))){
 				if(!empty($data)) $data .=" , ";
 				$data .= " {$k} = '{$v}' ";
 			}
 		}
+		if(!empty($password) && !empty($id)){
+			$password = md5($password);
+			if(!empty($data)) $data .=" , ";
+			$data .= " `password` = '{$password}' ";
+		}
+
 		if(isset($_FILES['img']) && $_FILES['img']['tmp_name'] != ''){
 				$fname = 'uploads/'.strtotime(date('y-m-d H:i')).'_'.$_FILES['img']['name'];
 				$move = move_uploaded_file($_FILES['img']['tmp_name'],'../'. $fname);
@@ -55,7 +61,7 @@ Class Users extends DBConnection {
 				}
 				return 1;
 			}else{
-				return "INSERT INTO users set {$data}";
+				return "UPDATE users set $data where id = {$id}";
 			}
 			
 		}

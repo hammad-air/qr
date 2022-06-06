@@ -23,10 +23,10 @@
 				<thead>
 					<tr>
 						<th class="text-center">#</th>
-						<th>Code</th>
-						<th>City</th>
-						<th>Description</th>
-						<th>State</th>
+						<th>Course Code</th>
+						<th>Course Name</th>
+						<th>Semester</th>
+						<th>Department</th>
 						<th>Action</th>
 					</tr>
 				</thead>

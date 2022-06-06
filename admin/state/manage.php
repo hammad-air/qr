@@ -17,7 +17,7 @@ if(isset($_GET['id']) && !empty($_GET['id'])){
 		<input type="text" class="form-control form-control-sm" name="code" id="code" value="<?php echo isset($code) ? $code : '' ?>" required>
 	</div>
 	<div class="form-group">
-		<label for="name" class="control-label">State</label>
+		<label for="name" class="control-label">Department</label>
 		<input type="text" class="form-control form-control-sm" name="name" id="name" value="<?php echo isset($name) ? $name : '' ?>" required>
 	</div>
 	<div class="form-group">

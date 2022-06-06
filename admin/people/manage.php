@@ -23,8 +23,8 @@ if(isset($_GET['id']) && !empty($_GET['id'])){
 				<input type="text" class="form-control form-control-sm" name="lastname" id="lastname" value="<?php echo isset($lastname) ? $lastname : '' ?>" required>
 			</div>
 			<div class="form-group">
-				<label for="middlename" class="control-label">Middle Name</label>
-				<input type="text" class="form-control form-control-sm" name="middlename" id="middlename" value="<?php echo isset($middlename) ? $middlename : '' ?>" placeholder="(optional)">
+				<label for="middlename" class="control-label">Department</label>
+				<input type="text" class="form-control form-control-sm" name="middlename" id="middlename" value="<?php echo isset($middlename) ? $middlename : '' ?>" placeholder="" required>
 			</div>
 			<div class="form-group">
 				<label for="email" class="control-label">Email</label>
@@ -38,23 +38,23 @@ if(isset($_GET['id']) && !empty($_GET['id'])){
 		<div class="col-md-6">
 			<br>
 			<div class="form-group">
-				<label for="address" class="control-label">Address</label>
+				<label for="address" class="control-label">Roll Number</label>
 				<textarea type="text" class="form-control form-control-sm" name="address" id="address" required ><?php echo isset($address) ? $address : '' ?></textarea>
 			</div>
-			<div class="form-group">
-				<label for="city_id" class="control-label">City/State</label>
+			 <div class="form-group">
+				<label for="city_id" class="control-label"> Subject/Department</label>
 				<select name="city_id" id="city_id" class="custom-select custom-select-sm select2" required>
 					<option value=""></option>
 					<?php 
 					$city = $conn->query("SELECT c.*,s.name as sname FROM city_list c inner join state_list s on c.state_id=s.id order by c.name asc");
 					while($row=$city->fetch_assoc()):
 					?>
-					<option value="<?php echo $row['id'] ?>" <?php echo isset($city_id) && $city_id == $row['id'] ? "selected" : '' ?>><?php echo ucwords($row['name'].' City, '.$row['sname']) ?></option>
+					<option value="<?php echo $row['id'] ?>" <?php echo isset($city_id) && $city_id == $row['id'] ? "selected" : '' ?>><?php echo ucwords($row['name'].' - '.$row['sname']) ?></option>
 					<?php endwhile; ?>
 				</select>
-			</div>
-			<div class="form-group">
-				<label for="zone_id" class="control-label">Barangay/Zone</label>
+			</div> 
+			 <div class="form-group">
+				<label for="zone_id" class="control-label">Room Number</label>
 				<select name="zone_id" id="zone_id" class="custom-select custom-select-sm" required>
 					<option value=""></option>
 					<?php 
@@ -64,7 +64,7 @@ if(isset($_GET['id']) && !empty($_GET['id'])){
 					<option style="display: none" data-city="<?php echo $row['city_id'] ?>" value="<?php echo $row['id'] ?>" <?php echo isset($zone_id) && $zone_id == $row['id'] ? "selected" : '' ?>><?php echo ucwords($row['name']) ?></option>
 					<?php endwhile; ?>
 				</select>
-			</div>
+			</div> 
 			<div class="form-group">
 				<label for="" class="control-label">Image</label>
 				<div class="custom-file">

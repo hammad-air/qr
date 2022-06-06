@@ -21,6 +21,7 @@
 					<col width="15%">
 				</colgroup> -->
 				<thead>
+					
 					<tr>
 						<th class="text-center">#</th>
 						<th>Code</th>
@@ -39,7 +40,7 @@
 						<th class="text-center"><?php echo $i++ ?></th>
 						<td><b><?php echo $row['code'] ?></b></td>
 						<td><b><?php echo ucwords($row['name']) ?></b></td>
-						<td><b><?php echo ucwords($row['address'].', '.$row['zname'].', '.$row['cname'].' City, '.$row['sname']) ?></b></td>
+						<td><b><?php echo ucwords($row['address'].' <br> <strong style="color:blue;">Room   : </strong> '.$row['zname'].' ') ?></b></td>
 						<td class="text-center">
 		                    <div class="btn-group">
 		                    	<a href="javascript:void(0)" data-id='<?php echo $row['id'] ?>' class="btn btn-primary btn-flat view_establishment">

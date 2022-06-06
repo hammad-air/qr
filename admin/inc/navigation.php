@@ -16,16 +16,16 @@
           <div class="os-content-glue" style="margin: 0px -8px; width: 249px; height: 646px;"></div>
           <div class="os-padding">
             <div class="os-viewport os-viewport-native-scrollbars-invisible" style="overflow-y: scroll;">
-              <div class="os-content" style="padding: 0px 8px; height: 100%; width: 100%;">
+              <div class="os-content" style="padding: 0px 8px; height: 100%; width: 100%;"> <br>
                 <!-- Sidebar user panel (optional) -->
-                <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+                <!-- <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                   <div class="image">
-                    <img src="<?php echo validate_image($_settings->userdata('avatar')) ?>" class="img-circle elevation-2" alt="User Image" style="height: 2rem;object-fit: cover">
+                     <img src="<?php echo validate_image($_settings->userdata('avatar')) ?>" class="img-circle elevation-2" alt="User Image" style="height: 2rem;object-fit: cover"> 
                   </div>
                   <div class="info">
                     <a href="<?php echo base_url ?>admin/?page=user" class="d-block"><?php echo ucwords($_settings->userdata('firstname').' '.$_settings->userdata('lastname')) ?></a>
                   </div>
-                </div>
+                </div> -->
                 <!-- Sidebar Menu -->
                 <nav class="mt-2">
                    <ul class="nav nav-pills nav-sidebar flex-column nav-flat" data-widget="treeview" role="menu" data-accordion="false">
@@ -42,7 +42,7 @@
                       <a href="<?php echo base_url ?>admin/?page=people" class="nav-link nav-people">
                         <i class="nav-icon fas fa-users"></i>
                         <p>
-                          Individuals List
+                          Students History 
                         </p>
                       </a>
                     </li>
@@ -50,7 +50,7 @@
                       <a href="<?php echo base_url ?>admin/?page=establishment" class="nav-link nav-establishment">
                         <i class="nav-icon fas fa-building"></i>
                         <p>
-                          Establishment List
+                          Teacher's List
                         </p>
                       </a>
                     </li>
@@ -59,7 +59,7 @@
                       <a href="<?php echo base_url ?>admin/?page=state" class="nav-link nav-state">
                         <i class="nav-icon fas fa-map-marker-alt"></i>
                         <p>
-                          State/Province List
+                          Department Details
                         </p>
                       </a>
                     </li> 
@@ -67,7 +67,7 @@
                       <a href="<?php echo base_url ?>admin/?page=city" class="nav-link nav-city">
                         <i class="nav-icon fas fa-map-marker"></i>
                         <p>
-                          City List
+                          Courses Details
                         </p>
                       </a>
                     </li>
@@ -75,7 +75,7 @@
                       <a href="<?php echo base_url ?>admin/?page=zone" class="nav-link nav-zone">
                         <i class="nav-icon fas fa-layer-group"></i>
                         <p>
-                          Barangay/Zone List
+                          Room Number Details
                         </p>
                       </a>
                     </li>
@@ -84,7 +84,7 @@
                       <a href="<?php echo base_url ?>admin/?page=reports" class="nav-link nav-reports">
                         <i class="nav-icon fas fa-layer-group"></i>
                         <p>
-                          CTS Report
+                          Attendence Report
                         </p>
                       </a>
                     </li>

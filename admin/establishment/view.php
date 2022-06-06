@@ -30,12 +30,12 @@ $state = $conn->query("SELECT * FROM state_list where id in (SELECT state_id  FR
 		<dd><?php echo ucwords($code) ?></dd>
 	</dl>
 	<dl>
-		<dt>Establishment Name</dt>
+		<dt></dt>
 		<dd><?php echo ucwords($name) ?></dd>
 	</dl>
 	<dl>
-		<dt>Address</dt>
-		<dd><?php echo strtoupper($address.', '.$zone.', '.$city.' City, '.$state) ?></dd>
+		<dt>Course Details :</dt>
+		<dd><?php echo strtoupper('<br> <strong>Subject</strong> '.$address.'<br> <strong>Room Number</strong> '.$zone.' <br> <strong>Deparment</strong> '.$state) ?></dd>
 	</dl>
 </div>
 <script>

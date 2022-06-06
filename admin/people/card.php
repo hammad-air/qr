@@ -27,11 +27,11 @@ QRcode::png($code, $tempDir.''.$code.'.png', QR_ECLEVEL_L, 5);
 		<tr>
 			<td align="center" style="line-height: 5mm; padding:.5rem">
 				<strong>
-				Republic of the <?php echo $_settings->info('address') ?> <br>
-				Province of <?php echo ucwords($state) ?><br>
-				<?php echo ucwords($city) ?> City<br>
-				<small>(Covid-19) Contact Tracing System Card</small> <br>
-				<small><?php echo $code ?></small>
+			 <?php echo $_settings->info('address') ?> <br>
+				<!-- Province of <?php echo ucwords($state) ?><br> -->
+				<!-- <?php echo ucwords($city) ?> City<br> -->
+				<h3>Student ID Card</h3>
+				<!-- <small><?php echo $code ?></small> -->
 				</strong>
 			</td>
 			<td  rowspan="2" align="center" style="width:1.5in;border-left:2px solid black">
@@ -42,9 +42,15 @@ QRcode::png($code, $tempDir.''.$code.'.png', QR_ECLEVEL_L, 5);
 		<tr>
 			<td style="width:2.5in; padding:.5rem" align="left">
 				<br>
-				<span><strong>Name: </strong><?php echo strtoupper($lastname.' '.$firstname.' '.$middlename) ?></span> 
-				<br><br>
-				<span><strong>Address: </strong><?php echo strtoupper($address.', '.$zone.', '.$city.' City, '.$state) ?></span> <br>
+				<span><strong>Name: </strong><?php echo strtoupper($firstname.' '.$lastname) ?></span> 
+				<br>
+				<span><strong> Student ID: </strong><?php echo strtoupper($address.'<br> <strong> Department </strong>' . $middlename)
+			    //  <span><strong> Department: </strong><?php echo strtoupper($contact.)
+				
+				// .$zone.', '.$city.' City, '.$state
+			
+				?></span> <br>
+				<!-- <center><span><strong> ID Card Number: </strong><?php echo strtoupper($address.', '.$zone.', '.$city.' City, '.$state) ?></span> <br> </center> -->
 			</td>
 			
 		</tr>

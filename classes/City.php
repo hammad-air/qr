@@ -26,7 +26,7 @@ Class City extends DBConnection {
 			}else{
 				$qry = $this->conn->query("INSERT INTO city_list set {$data}");
 				if($qry){
-					$this->settings->set_flashdata('success','City successfully saved.');
+					$this->settings->set_flashdata('success','Section successfully saved.');
 					return 1;
 				}else{
 					return 2;
@@ -40,7 +40,7 @@ Class City extends DBConnection {
 			}else{
 				$qry = $this->conn->query("UPDATE city_list set $data where id = {$id}");
 				if($qry){
-					$this->settings->set_flashdata('success','City successfully updated.');
+					$this->settings->set_flashdata('success','Section successfully updated.');
 					return 1;
 				}else{
 					return "INSERT INTO city_list set {$data}";
@@ -53,7 +53,7 @@ Class City extends DBConnection {
 		extract($_POST);
 		$qry = $this->conn->query("DELETE FROM city_list where id = $id");
 		if($qry){
-			$this->settings->set_flashdata('success','City successfully deleted.');
+			$this->settings->set_flashdata('success','Section successfully deleted.');
 			return 1;
 		}else{
 			return false;

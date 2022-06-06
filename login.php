@@ -39,7 +39,7 @@
   <!-- /.lockscreen-item -->
   <div id="msg"></div>
   <div class="help-block text-center">
-    Enter Establishement Code <br>
+    Enter Teacher Code <br>
       <a href="<?php echo base_url ?>admin/">Go to Admin Panel</a>
 
   </div>

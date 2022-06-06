@@ -15,7 +15,7 @@ $date = isset($_GET['eid'])? $_GET['date'] : date('Y-m-d');
 				<div class="row">
 					<div class="col-sm-3">
 						<div class="form-group">
-							<label for="establishment_id">Establishment</label>
+							<label for="establishment_id">Teacher's List</label>
 							<select name="establishment_id" id="establishment_id" class="custom-select custom-select-sm select2">
 								<option value="all" <?php echo $eid == 'all' ? 'selected' : '' ?>>All</option>
 								<?php
@@ -49,15 +49,15 @@ $date = isset($_GET['eid'])? $_GET['date'] : date('Y-m-d');
 						<tr>
 							<th>#</th>
 							<th>Date/Time</th>
-							<th>Person's Code/Name</th>
-							<th>Establishment's Code/Name</th>
+							<th>Student Details</th>
+							<th>Teacher Details</th>
 						</tr>
 					</thead>
 					<tbody>
 						<?php
 						$i = 1;
-						$where = ($eid > 0) ? " and e.id = {$eid} " : "";
-						$tracks = $conn->query("SELECT t.*,Concat(p.firstname,' ',p.middlename,' ',p.lastname) as pname,p.code as pcode, e.name as ename,e.code as ecode from tracks t inner join people p on p.id=t.person_id inner join establishment e on. e.id = t.establishment_id where date_format(t.date_added,'%Y-%m-%d') = '{$date}' $where order by date(t.date_added) asc ");
+						$where = ($eid > 0 && is_numeric($eid)) ? " and e.id = {$eid} " : "";
+						$tracks = $conn->query("SELECT t.*,Concat('<br> <strong>Name :</strong> ' ,p.firstname,'  ',p.lastname, ' <br> <strong>Roll Number :</strong> ',p.address) as pname,p.code as pcode, e.name as ename,e.code as ecode,e.address as eaddress  from tracks t inner join people p on p.id=t.person_id inner join establishment e on. e.id = t.establishment_id where date_format(t.date_added,'%Y-%m-%d') = '{$date}' $where order by date(t.date_added) asc ");
 						while($row=$tracks->fetch_assoc()):
 
 						?>
@@ -65,7 +65,7 @@ $date = isset($_GET['eid'])? $_GET['date'] : date('Y-m-d');
 							<td class="text-center"><?php echo $i++; ?></td>
 							<td><?php echo date("M d, Y h:i A",strtotime($row['date_added'])) ?></td>
 							<td><?php echo $row['pcode'] . ' - ' . (ucwords($row['pname'])) ?></td>
-							<td><?php echo $row['ecode'] . ' - ' . (ucwords($row['ename'])) ?></td>
+							<td><?php echo $row['ecode'] . ' <br> ' . (ucwords($row['ename'])) .' <br> <strong>Subject : </strong>' . (ucwords($row['eaddress'])) ?></td>
 						</tr>
 						<?php endwhile; ?>
 					</tbody>
@@ -73,7 +73,6 @@ $date = isset($_GET['eid'])? $_GET['date'] : date('Y-m-d');
 			</div>
 		</div>
 	</div>
-	
 
 	<noscript>
 		<style>

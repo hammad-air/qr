@@ -26,8 +26,8 @@
 						<th>Code</th>
 						<th>Name</th>
 						<th>Email</th>
-						<th>Contact</th>
-						<th>Address</th>
+						<th>Vehicle Issued Number</th>
+						<th>Department</th>
 						<th>Action</th>
 					</tr>
 				</thead>
@@ -40,10 +40,12 @@
 					<tr>
 						<th class="text-center"><?php echo $i++ ?></th>
 						<td><b><?php echo $row['code'] ?></b></td>
-						<td><b><?php echo ucwords($row['lastname'].", ".$row['firstname'].' '.$row['middlename']) ?></b></td>
+						<td><b><?php echo ucwords($row['firstname']." ".$row['lastname']. " <br> <strong> Roll No. :</strong> " .$row['address']  ) ?></b></td>
 						<td><b><?php echo $row['email'] ?></b></td>
 						<td><b><?php echo $row['contact'] ?></b></td>
-						<td><b><?php echo ucwords($row['address'].', '.$row['zname'].', '.$row['cname'].' City, '.$row['sname']) ?></b></td>
+						<td><b><?php echo ucwords($row['middlename'].' 
+						'//.$row['zname'].', '.$row['cname'].' City, '.$row['sname']
+						) ?></b></td>
 						<td class="text-center">
 		                    <div class="btn-group">
 		                    	<a href="javascript:void(0)" data-id='<?php echo $row['id'] ?>' class="btn btn-success btn-track track_people">

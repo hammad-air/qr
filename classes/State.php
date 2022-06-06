@@ -26,7 +26,7 @@ Class State extends DBConnection {
 			}else{
 				$qry = $this->conn->query("INSERT INTO state_list set {$data}");
 				if($qry){
-					$this->settings->set_flashdata('success','state successfully saved.');
+					$this->settings->set_flashdata('success','Department successfully saved.');
 					return 1;
 				}else{
 					return 2;
@@ -40,7 +40,7 @@ Class State extends DBConnection {
 			}else{
 				$qry = $this->conn->query("UPDATE state_list set $data where id = {$id}");
 				if($qry){
-					$this->settings->set_flashdata('success','state successfully updated.');
+					$this->settings->set_flashdata('success','Department successfully updated.');
 					return 1;
 				}else{
 					return "INSERT INTO state_list set {$data}";
@@ -53,7 +53,7 @@ Class State extends DBConnection {
 		extract($_POST);
 		$qry = $this->conn->query("DELETE FROM state_list where id = $id");
 		if($qry){
-			$this->settings->set_flashdata('success','state successfully deleted.');
+			$this->settings->set_flashdata('success','Department successfully deleted.');
 			return 1;
 		}else{
 			return false;

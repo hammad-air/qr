@@ -23,10 +23,10 @@
 				<thead>
 					<tr>
 						<th class="text-center">#</th>
-						<th>Code</th>
-						<th>Barangay/Zone</th>
-						<th>Description</th>
-						<th>City/State</th>
+						<th>Floor</th>
+						<th>Room Name</th>
+						<th>Class Timing</th>
+						<th>Details</th>
 						<th>Action</th>
 					</tr>
 				</thead>

@@ -154,12 +154,12 @@ CREATE TABLE `system_info` (
 --
 
 INSERT INTO `system_info` (`id`, `meta_field`, `meta_value`) VALUES
-(1, 'name', 'Covid Tacking System - QR Code'),
-(2, 'address', 'Philippines'),
-(3, 'contact', '+1234567890'),
-(4, 'email', 'info@sample.com'),
-(5, 'fb_page', 'https://www.facebook.com/myPageName'),
-(6, 'short_name', 'CTS-QR'),
+(1, 'name', 'SMI University Attendance Management System'),
+(2, 'address', 'SMI University'),
+(3, 'contact', '+923453191638'),
+(4, 'email', 'smiu@edu.com'),
+(5, 'fb_page', 'https://www.facebook.com/smi_university'),
+(6, 'short_name', 'SMIU-Attendance'),
 (9, 'logo', 'uploads/1614224160_47446233-clean-noir-et-gradient-sombre-image-de-fond-abstrait-.jpg');
 
 -- --------------------------------------------------------

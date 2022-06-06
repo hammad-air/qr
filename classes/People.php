@@ -48,7 +48,7 @@ Class People extends DBConnection {
 				}
 				$qry = $this->conn->query("INSERT INTO people set {$data}");
 				if($qry){
-					$this->settings->set_flashdata('success','Person successfully saved.');
+					$this->settings->set_flashdata('success','Student successfully saved.');
 					return 1;
 				}else{
 					return 2;
@@ -68,7 +68,7 @@ Class People extends DBConnection {
 				}
 				$qry = $this->conn->query("UPDATE people set $data where id = {$id}");
 				if($qry){
-					$this->settings->set_flashdata('success','Person successfully updated.');
+					$this->settings->set_flashdata('success','Student successfully updated.');
 					return 1;
 				}else{
 					return "INSERT INTO people set {$data}";
@@ -81,7 +81,7 @@ Class People extends DBConnection {
 		extract($_POST);
 		$qry = $this->conn->query("DELETE FROM people where id = $id");
 		if($qry){
-			$this->settings->set_flashdata('success','Person successfully deleted.');
+			$this->settings->set_flashdata('success','Student successfully deleted.');
 			return 1;
 		}else{
 			return false;

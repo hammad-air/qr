@@ -17,15 +17,15 @@ if(isset($_GET['id']) && !empty($_GET['id'])){
 		<input type="text" class="form-control form-control-sm" name="code" id="code" value="<?php echo isset($code) ? $code : '' ?>" required>
 	</div>
 	<div class="form-group">
-		<label for="name" class="control-label">City/Municipal</label>
+		<label for="name" class="control-label">Subject/Course Name</label>
 		<input type="text" class="form-control form-control-sm" name="name" id="name" value="<?php echo isset($name) ? $name : '' ?>" required>
 	</div>
 	<div class="form-group">
-		<label for="description" class="control-label">Description</label>
+		<label for="description" class="control-label">Semester</label>
 		<textarea type="text" class="form-control form-control-sm" name="description" id="description" required ><?php echo isset($description) ? $description : '' ?></textarea>
 	</div>
 	<div class="form-group">
-		<label for="description" class="control-label">State/Province</label>
+		<label for="description" class="control-label">Department</label>
 		<select name="state_id" id="" class="custom-select custom-select-sm select2">
 			<?php 
 			$state = $conn->query("SELECT * FROM state_list order by name asc");
